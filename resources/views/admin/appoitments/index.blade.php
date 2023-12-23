@@ -191,11 +191,11 @@
       events: eventData,
       eventRender: function (event, element) {
         // Set the background color based on the status
-        if (event.status === 'canceled') {
+        if (event.status == 'canceled') {
           element.css('background-color', '#ff6666'); // Red for canceled events
-        } else if (event.status === 'completed') {
+        } else if (event.status == 'completed') {
           element.css('background-color', '#b3ffb3'); // Green for completed events
-        } else if (event.status === 'pending') {
+        } else if (event.status == 'pending') {
           element.css('background-color', '#ffcccb'); // Light pink for pending events
         }
       },
