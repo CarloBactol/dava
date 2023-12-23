@@ -196,7 +196,7 @@
         } else if (event.status === 'Completed') {
           element.css('background-color', 'green'); // Green for completed events
         } else if (event.status === 'Pending') {
-          element.css('background-color', 'yellow'); // Light pink for pending events
+          element.css('background-color', '#b8b806d5'); // Light pink for pending events
         }
       },
       eventClick: function (calEvent, jsEvent, view) {
@@ -233,7 +233,7 @@
   }
 
   .pending {
-    background-color: yellow;
+    background-color: #b8b806d5;
   }
 </style>
 
