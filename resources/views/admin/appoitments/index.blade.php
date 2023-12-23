@@ -225,15 +225,15 @@
   }
 
   .canceled {
-    background-color: #ff6666;
+    background-color: red;
   }
 
   .completed {
-    background-color: #b3ffb3;
+    background-color: green;
   }
 
   .pending {
-    background-color: #ffcccb;
+    background-color: yellow;
   }
 </style>
 
