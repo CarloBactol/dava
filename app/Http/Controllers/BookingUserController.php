@@ -64,7 +64,7 @@ class BookingUserController extends Controller
                                 ->count();
 
                             if ($existingDateTime > 0) {
-                                $fail("The selected time range overlaps with an existing booking");
+                                $fail("The selected date is already booked. Please choose a different date.");
                             }
                         }
                     }
