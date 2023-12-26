@@ -30,18 +30,18 @@ class AdminDashboard extends Controller
         $medicalRecords = MedicalRecord::count();
 
         //postgresql
-        // $bookings = DB::table('bookings')
-        //     ->select(DB::raw("to_char(created_at, 'YYYY-MM') as month"), DB::raw('COUNT(*) as total'))
-        //     ->groupBy('month')
-        //     ->orderBy('month')
-        //     ->get();
-
-        // mysql
         $bookings = DB::table('bookings')
-            ->select(DB::raw("DATE_FORMAT(created_at, '%Y-%m') as month"), DB::raw('COUNT(*) as total'))
+            ->select(DB::raw("to_char(created_at, 'YYYY-MM') as month"), DB::raw('COUNT(*) as total'))
             ->groupBy('month')
             ->orderBy('month')
             ->get();
+
+        // mysql
+        // $bookings = DB::table('bookings')
+        //     ->select(DB::raw("DATE_FORMAT(created_at, '%Y-%m') as month"), DB::raw('COUNT(*) as total'))
+        //     ->groupBy('month')
+        //     ->orderBy('month')
+        //     ->get();
 
         $bookings->transform(function ($item) {
             $item->month = Carbon::createFromFormat('Y-m', $item->month)->format('M Y');
