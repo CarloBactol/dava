@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
         $this->call(AccountGcashSeeder::class);
         $this->call(SpecializeSeeder::class);
         $this->call(MedecineSeeder::class);
-        $this->call(BookingSeeder::class);
+        // $this->call(BookingSeeder::class);
     }
 }

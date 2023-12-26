@@ -58,16 +58,16 @@
                             </div>
                             <div class="col-4">
                                 <div class="form-group">
-                                    <label for="">Start</label>
-                                    <input type="time" disabled class="form-control" value="{{ $userBook->Start }}">
+                                    <label for="">Start Time</label>
+                                    <input type="time" disabled class="form-control" value="{{ $userBook->start }}">
                                 </div>
                             </div>
-                            <div class="col-4">
+                            {{-- <div class="col-4">
                                 <div class="form-group">
                                     <label for="">End</label>
                                     <input type="time" disabled class="form-control " value="{{ $userBook->end }}">
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
 
                         <div class="form-group">
@@ -82,6 +82,8 @@
                                     class="form-control">Pending</option>
                                 <option value="Completed" {{ $userBook->status == 'Completed' ? 'selected' : ''}}
                                     class="form-control">Completed</option>
+                                <option value="Approved" {{ $userBook->status == 'Approved' ? 'selected' : ''}}
+                                    class="form-control">Approved</option>
                                 <option value="Canceled" {{ $userBook->status == 'Canceled' ? 'selected' :
                                     ''}}
                                     class="form-control">Canceled</option>
