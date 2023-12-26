@@ -55,12 +55,12 @@ class BookingUserController extends Controller
                                 ->where('services', $request->services)
                                 ->where('type', $request->type)
                                 ->where('date', $request->date)
-                                ->where(function ($query) use ($request) {
-                                    $query->where('start', '<=', $request->start)
-                                        ->where('end', '>=', $request->start)
-                                        ->orWhere('start', '<=', $request->end)
-                                        ->where('end', '>=', $request->end);
-                                })
+                                // ->where(function ($query) use ($request) {
+                                //     $query->where('start', '<=', $request->start)
+                                //         ->where('end', '>=', $request->start)
+                                //         ->orWhere('start', '<=', $request->end)
+                                //         ->where('end', '>=', $request->end);
+                                // })
                                 ->count();
 
                             if ($existingDateTime > 0) {
@@ -70,7 +70,7 @@ class BookingUserController extends Controller
                     }
                 },
             ],
-            'end' => 'required|date_format:H:i|after:start',
+            // 'end' => 'required|date_format:H:i|after:start',
             'date' => [
                 'required',
                 'date', // Ensure it's a valid date format
@@ -89,6 +89,12 @@ class BookingUserController extends Controller
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 400);
         }
+
+
+
+
+
+
         // Perform your additional validation logic here (e.g., check if the date range exists in the database)
 
         // return response()->json(['message' => 'Time range is valid.'], 200);
