@@ -57,6 +57,8 @@
                     <label class="badge badge-warning">Pending</label>
                     @elseif ($item->status == 'Completed')
                     <label class="badge badge-success">Completed</label>
+                    @elseif ($item->status == 'user_appoitments')
+                    <label class="badge badge-primary">Approved</label>
                     @elseif ($item->status == 'Canceled')
                     <label class="badge badge-danger">Canceled</label>
                     @endif

@@ -81,7 +81,7 @@
                                 <option value="Pending" {{ $userBook->status == 'Pending' ? 'selected' : ''}}
                                     class="form-control">Pending</option>
                                 <option value="Completed" {{ $userBook->status == 'Completed' ? 'selected' : ''}}
-                                    class="form-control">Completed</option>
+                                    class="form-control">Completed</option>nj
                                 <option value="Approved" {{ $userBook->status == 'Approved' ? 'selected' : ''}}
                                     class="form-control">Approved</option>
                                 <option value="Canceled" {{ $userBook->status == 'Canceled' ? 'selected' :
@@ -91,7 +91,7 @@
                             @if($userBook->status == 'Canceled')
                             <span class="invalid-feedback" role="alert">
                                 <strong>Appointments was canceled cannot be update.</strong>
-                            </span>
+                            </span>m
                             @elseif ($userBook->status == 'Completed')
                             <span class="valid-feedback" role="alert">
                                 <strong>Appointments was completed cannot be update.</strong>
