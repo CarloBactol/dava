@@ -82,8 +82,8 @@
                                     class="form-control">Pending</option>
                                 <option value="Completed" {{ $userBook->status == 'Completed' ? 'selected' : ''}}
                                     class="form-control">Completed</option>nj
-                                <option value="Approved" {{ $userBook->status == 'Approved' ? 'selected' : ''}}
-                                    class="form-control">Approved</option>
+                                {{-- <option value="Approved" {{ $userBook->status == 'Approved' ? 'selected' : ''}}
+                                    class="form-control">Approved</option> --}}
                                 <option value="Canceled" {{ $userBook->status == 'Canceled' ? 'selected' :
                                     ''}}
                                     class="form-control">Canceled</option>
