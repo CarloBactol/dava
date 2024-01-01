@@ -53,7 +53,7 @@ class BookingUserController extends Controller
                         } else {
                             $existingDateTime = Booking::where('branch', $request->branch)
                                 ->where('services', $request->services)
-                                ->where('type', $request->type)
+                                // ->where('type', $request->type)
                                 ->where('date', $request->date)
                                 ->where('email', $request->email)
                                 // ->where(function ($query) use ($request) {
