@@ -55,6 +55,7 @@ class BookingUserController extends Controller
                                 ->where('services', $request->services)
                                 ->where('type', $request->type)
                                 ->where('date', $request->date)
+                                ->where('email', $request->email)
                                 // ->where(function ($query) use ($request) {
                                 //     $query->where('start', '<=', $request->start)
                                 //         ->where('end', '>=', $request->start)
