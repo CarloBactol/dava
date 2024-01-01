@@ -53,7 +53,7 @@ class BookingUserController extends Controller
                         } else {
                             $existingDateTime = Booking::where('branch', $request->branch)
                                 ->where('services', $request->services)
-                                // ->where('type', $request->type)
+                                ->where('type', $request->type)
                                 ->where('date', $request->date)
                                 ->where('email', $request->email)
                                 // ->where(function ($query) use ($request) {
@@ -72,16 +72,38 @@ class BookingUserController extends Controller
                 },
             ],
             // 'end' => 'required|date_format:H:i|after:start',
+            // 'date' => [
+            //     'required',
+            //     'date', // Ensure it's a valid date format
+            //     function ($attribute, $value, $fail) {
+            //         // Convert the date string to a DateTime object
+            //         $selectedDate = new DateTime($value);
+
+            //         // Check if the selected date is a weekday (Monday to Friday)
+            //         if ($selectedDate->format('N') >= 6) {
+            //             $fail("Selected date must be a weekday (Monday to Friday).");
+            //         }
+            //     },
+            // ],
             'date' => [
                 'required',
-                'date', // Ensure it's a valid date format
-                function ($attribute, $value, $fail) {
+                'date',
+                function ($attribute, $value, $fail) use ($request) {
                     // Convert the date string to a DateTime object
                     $selectedDate = new DateTime($value);
 
                     // Check if the selected date is a weekday (Monday to Friday)
                     if ($selectedDate->format('N') >= 6) {
                         $fail("Selected date must be a weekday (Monday to Friday).");
+                    }
+
+                    // Check if the user has already made a booking for the given date
+                    $existingBookings = Booking::where('email', $request->email)
+                        ->where('date', $request->date)
+                        ->count();
+
+                    if ($existingBookings > 0) {
+                        $fail("You can only make one booking per day.");
                     }
                 },
             ],
@@ -91,14 +113,6 @@ class BookingUserController extends Controller
             return response()->json(['errors' => $validator->errors()], 400);
         }
 
-
-
-
-
-
-        // Perform your additional validation logic here (e.g., check if the date range exists in the database)
-
-        // return response()->json(['message' => 'Time range is valid.'], 200);
         Booking::create([
             'branch' => $request->branch,
             'services' => $request->services,
@@ -110,43 +124,7 @@ class BookingUserController extends Controller
             'address' => $request->address,
         ]);
 
-        // $name = $request->email;
-        // $data = [
-        //     'name' => $name,
-        //     'message' => 'has a new appointment.',
-        //     'booking_details' => [
-        //         'branch' => $request->branch,
-        //         'services' => $request->services,
-        //         'date' => $request->date,
-        //         'start' => $request->start,
-        //         'end' => $request->end,
-        //         'type' => $request->type,
-        //         'email' => $request->email,
-        //         'address' => $request->address,
-        //     ],
-        // ];
 
-        $data = [
-            'message' => 'New data added!',
-        ];
-
-        // $pusher = new Pusher(
-        //     env('PUSHER_APP_KEY'),
-        //     env('PUSHER_APP_SECRET'),
-        //     env('PUSHER_APP_ID'),
-        //     [
-        //         'cluster' => env('PUSHER_APP_CLUSTER'),
-        //         'encrypted' => true,
-        //     ]
-        // );
-
-        // $pusher->trigger('my-channel', 'my-event', $data);
-
-        // Dispatch the event with data
-        // event(new UserBooking($data));
-
-        // $data = $name . ' ' . 'has a new appointment.';
-        // event(new UserBooking($data));
         return response()->json(['message' => 'Successfully save']);
         // event(new NewNotification('New notification message'));
         // return response()->json(['message' => 'Notification sent']);
