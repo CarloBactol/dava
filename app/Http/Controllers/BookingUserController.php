@@ -42,7 +42,7 @@ class BookingUserController extends Controller
                     $end = $dateTimeEnd->format('H:i');
 
                     if ($start > $request->start || $end < $request->end) {
-                        $fail('Invalid business hours the ' . $location->branch . ' ' . 'Open time is: ' . $location->openHours);
+                        $fail('Invalid business hours the ' . $location->branch . ' ' . 'Open time is: ' . $location->openHours . ' ' . 'Luanch Time: 12noon - 1:PM');
                     } else {
                         $lunchBreakStart = '12:00';
                         $lunchBreakEnd = '13:00';
