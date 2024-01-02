@@ -28,13 +28,13 @@ class AdminVeterinary extends Controller
 
             $getDate = User::Where('role', '!=', 'super_admin')->get();
 
-            dd($getDate);
+            // dd($getDate);
 
             foreach ($getDate as $key => $value) {
                 $veterinary = User::orderBy('first_name', 'ASC')
                     ->where('role', 'veterinarian')
                     ->where('branch', Auth::user()->branch)
-                    ->whereIn('specialize_id', explode(',', $value->specialize_id))
+                    // ->whereIn('specialize_id', explode(',', $value->specialize_id))
                     ->get();
             }
         }
