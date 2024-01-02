@@ -25,7 +25,7 @@
                 ($currentTime->hour >= 12 && $currentTime->hour < 18) { $greeting='Good Afternoon' ; } else {
                     $greeting='Good Evening' ; } @endphp <li
                     class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-                    <h1 class="welcome-text">{{ $greeting }}, <span class="text-black fw-bold">{{ $userName }}</span>
+                    <h1 class="welcome-text">Hello, <span class="text-black fw-bold">{{ $userName }}</span>
                     </h1>
                     <h3 class="welcome-sub-text">Your performance summary this week </h3>
                     </li>
