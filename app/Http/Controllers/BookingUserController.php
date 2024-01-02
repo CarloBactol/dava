@@ -51,22 +51,22 @@ class BookingUserController extends Controller
                         if ($request->start < $lunchBreakEnd && $request->end > $lunchBreakStart) {
                             $fail("The selected time range overlaps with the lunch break.");
                         } else {
-                            $existingDateTime = Booking::where('branch', $request->branch)
-                                ->where('services', $request->services)
-                                ->where('type', $request->type)
-                                ->where('date', $request->date)
-                                ->where('email', $request->email)
-                                // ->where(function ($query) use ($request) {
-                                //     $query->where('start', '<=', $request->start)
-                                //         ->where('end', '>=', $request->start)
-                                //         ->orWhere('start', '<=', $request->end)
-                                //         ->where('end', '>=', $request->end);
-                                // })
-                                ->count();
+                            // $existingDateTime = Booking::where('branch', $request->branch)
+                            //     ->where('services', $request->services)
+                            //     ->where('type', $request->type)
+                            //     ->where('date', $request->date)
+                            //     ->where('email', $request->email)
+                            //     // ->where(function ($query) use ($request) {
+                            //     //     $query->where('start', '<=', $request->start)
+                            //     //         ->where('end', '>=', $request->start)
+                            //     //         ->orWhere('start', '<=', $request->end)
+                            //     //         ->where('end', '>=', $request->end);
+                            //     // })
+                            //     ->count();
 
-                            if ($existingDateTime > 0) {
-                                $fail("The selected date is already booked. Please choose a different date.");
-                            }
+                            // if ($existingDateTime > 0) {
+                            //     $fail("The selected date is already booked. Please choose a different date.");
+                            // }
                         }
                     }
                 },
