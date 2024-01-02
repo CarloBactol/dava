@@ -69,6 +69,7 @@ class UserAppointment extends Controller
     public function edit($id)
     {
         $userBook = Booking::find($id);
+        dd($userBook);
         return view('admin.appoitments.edit', compact('userBook'));
     }
 
