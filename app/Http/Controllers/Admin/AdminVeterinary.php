@@ -28,6 +28,8 @@ class AdminVeterinary extends Controller
 
             $getDate = User::Where('role', '!=', 'super_admin')->get();
 
+            dd($getDate);
+
             foreach ($getDate as $key => $value) {
                 $veterinary = User::orderBy('first_name', 'ASC')
                     ->where('role', 'veterinarian')
