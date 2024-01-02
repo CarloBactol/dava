@@ -7,7 +7,7 @@
         </div>
         <div>
             <a class="navbar-brand brand-logo" href="{{ route('admin.admin_dashboards.index') }}">
-                DAVA
+                DDA
                 {{-- <img src="{{ asset('images/logo.svg')}}" alt="logo" /> --}}
             </a>
 
