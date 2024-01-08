@@ -91,7 +91,7 @@
                             @if($userBook->status == 'Canceled')
                             <span class="invalid-feedback" role="alert">
                                 <strong>Appointments was canceled cannot be update.</strong>
-                            </span>m
+                            </span>
                             @elseif ($userBook->status == 'Completed')
                             <span class="valid-feedback" role="alert">
                                 <strong>Appointments was completed cannot be update.</strong>
