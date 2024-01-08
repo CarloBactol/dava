@@ -226,7 +226,7 @@
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
                         <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Welcome to <a
-                                href="https://domesticdose-appointments-3844a452b0de.herokuapp.com/admin_dashboards">DomesticDose 
+                                href="https://domesticdose-appointments-3844a452b0de.herokuapp.com/admin/admin_dashboards">DomesticDose 
                                 appointments
                                 App</a> from
                             Pangasinan.</span>
