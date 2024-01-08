@@ -226,11 +226,11 @@
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
                         <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Welcome to <a
-                                href="http://127.0.0.1:8000/admin/admin_dashboards">Domestic Animals
-                                Veterinary
-                                System</a> from
+                                href="https://domesticdose-appointments-3844a452b0de.herokuapp.com/admin_dashboards">DomesticDose 
+                                appointments
+                                App</a> from
                             Pangasinan.</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2023. All
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2024. All
                             rights reserved.</span>
                     </div>
                 </footer>
