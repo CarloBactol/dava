@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="refresh" content="1800"> <!-- 30 minutes = 1800 seconds -->
 
-    <title>{{ config('app.name', 'DAVA') }}</title>
+    <title>{{ config('app.name', 'PVASP') }}</title>
 
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{ asset('./vendors/feather/feather.css')}}">
@@ -226,10 +226,7 @@
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-center justify-content-sm-between">
                         <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Welcome to <a
-                                href="https://domesticdose-appointments-3844a452b0de.herokuapp.com/admin/admin_dashboards">DomesticDose 
-                                Appointments
-                                App</a> from
-                            Pangasinan.</span>
+                                href="https://domesticdose-appointments-3844a452b0de.herokuapp.com/admin/admin_dashboards">PVASP</span>
                         <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Copyright © 2024. All
                             rights reserved.</span>
                     </div>
